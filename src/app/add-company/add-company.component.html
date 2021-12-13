@@ -1,0 +1,52 @@
+<div class="container p-5">
+    <div class="card">
+        <h4 class="card-header">Add New Company Entry</h4>
+        <div class="card-body">
+        <div>
+            <div class="submit-form">
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input
+                    type="companyName"
+                    class="form-control"
+                    id="companyName"
+                    required
+                    [(ngModel)]="company.companyName"
+                    name="companyName"
+                    />
+                </div>
+                <br>
+                
+                <button (click)="saveCompany()" class="btn btn-success" matRipple>Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <h4 class="card-header">Delete Company</h4>
+        <p style="text-align: center;" class="px-2">Disclaimer: This will only delete the tab within 'View Stock'. Records of said deleted company(s) can be found under 'All Company Stock' on the 'View Stock' Page.</p>
+        <div class="card-body">
+            <div class="row" id="table">
+                <table class="table-responsive hover table-sm" id="tableClass1">
+                    <thead class="table-header">
+                        <tr>
+                            <th scope="col">Company Name</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comp of comp" class="table-row">
+                            <td scope="row" data-label="Comp Name">{{comp.companyName}}</td>
+                            <td data-label="Delete" (click)="deleteComp(comp)">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill"  xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Edit Description</h1>
+<div mat-dialog-content>
+    <mat-form-field class="w-100" appearance="fill">
+      <input matInput placeholder="Description" [(ngModel)]="local_data.description" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">Update</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Edit Pack Size</h1>
+<div mat-dialog-content>
+    <mat-form-field class="w-100" appearance="fill">
+      <input matInput placeholder="Pack Size" [(ngModel)]="local_data.packsize" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">Update</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

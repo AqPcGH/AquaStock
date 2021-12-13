@@ -1,0 +1,88 @@
+<div class="container p-5">
+  <div class="card">
+      <h4 class="card-header">Add New Stock Entry</h4>
+      <div class="card-body">
+        <div>
+                <div class="submit-form">
+                  <div *ngIf="!submitted">
+                    <div>
+                      <mat-label for="companyId">Company</mat-label>
+                      <mat-select type="companyId" class="form-control"
+                        id="companyId" [(ngModel)]="stock.companyId" name="companyId" required
+                        (ngModelChange)="onChange($event)">
+                        <mat-option *ngFor="let company of comp" value="{{company._id}}" >{{company.companyName}}</mat-option>
+                      </mat-select>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <input
+                        class="form-control"
+                        id="description"
+                        required
+                        [(ngModel)]="stock.description"
+                        name="description"
+                      />
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="packsize">Pack Size</label>
+                      <input
+                        type="packsize"
+                        class="form-control"
+                        id="packsize"
+                        required
+                        [(ngModel)]="stock.packsize"
+                        name="packsize"
+                      />
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="quantity">Quantity</label>
+                      <input
+                        type="quantity"
+                        class="form-control"
+                        id="quantity"
+                        required
+                        [(ngModel)]="stock.quantity"
+                        name="quantity"
+                      />
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="measurement">Measurement</label>
+                      <input
+                        type="measurement"
+                        class="form-control"
+                        id="measurement"
+                        required
+                        [(ngModel)]="stock.measurement"
+                        name="measurement"
+                      />
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="specificGravity">Specific Gravity</label>
+                      <input
+                        type="specificGravity"
+                        class="form-control"
+                        id="specificGravity"
+                        required
+                        [(ngModel)]="stock.specificGravity"
+                        name="specificGravity"
+                      />
+                    </div>
+                    <br>
+              
+                    <button (click)="saveStock()" class="btn btn-success" matRipple>Submit</button>
+                  </div>
+                </div>
+              </div>
+      </div>
+  </div>
+</div>
