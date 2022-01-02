@@ -10,7 +10,7 @@ const headers = new HttpHeaders({ 'Content-Type': 'application/json' })
 })
 export class AuthService {
 
-  private URL = 'http://aquapacproductmanagement-env.eba-vhkrpxqq.us-east-2.elasticbeanstalk.com/api';
+  private URL = 'https://aquapacproductmanagement-env.eba-vhkrpxqq.us-east-2.elasticbeanstalk.com/api';
   // private URL = 'http://localhost:4000/api'
   constructor(private http: HttpClient, private router: Router) { }
 
